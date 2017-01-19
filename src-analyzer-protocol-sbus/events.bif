@@ -1,0 +1,14 @@
+# Developed by Davide Fauri (TU Eindhoven) - d.fauri@tue.nl
+
+# In this file, you'll define the events that your analyzer will
+# generate. A sample event is included.
+
+# ## TODO: Edit the sample event, and add more events.
+
+## Generated for Sample connections
+##
+## See `Google <http://lmgtfy.com/?q=Sample>`__ for more information about Sample
+##
+## c: The connection
+##
+event sample_event%(c: connection%);
