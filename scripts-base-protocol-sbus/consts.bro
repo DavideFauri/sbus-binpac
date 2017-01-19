@@ -11,6 +11,7 @@ export {
     [0x05] = "SBUS_RD_OUTPUT",
     [0x06] = "SBUS_RD_REGISTER",
     [0x07] = "SBUS_RD_TIMER",
+
     [0x0A] = "SBUS_WR_COUNTER",
     [0x0B] = "SBUS_WR_FLAG",
     [0x0C] = "SBUS_WR_RTC",
@@ -18,6 +19,7 @@ export {
     [0x0E] = "SBUS_WR_REGISTER",
     [0x0F] = "SBUS_WR_TIMER",
     [0x13] = "SBUS_RDWR_MULTI_MEDIAS",
+
     [0x14] = "SBUS_RD_PCD_STATUS_CPU0",
     [0x15] = "SBUS_RD_PCD_STATUS_CPU1",
     [0x16] = "SBUS_RD_PCD_STATUS_CPU2",
@@ -32,9 +34,11 @@ export {
     [0x20] = "SBUS_RD_PROGRAM_VERSION",
     [0x21] = "SBUS_RD_TEXT",
     [0x22] = "SBUS_RD_ACTIVE_TRANSITION",
+
     [0x23] = "SBUS_WR_USER_MEMORY",
     [0x24] = "SBUS_WR_PROGRAM_LINE",
     [0x25] = "SBUS_WR_TEXT",
+
     [0x28] = "SBUS_RUN_PROCEDURE_CPU0",
     [0x29] = "SBUS_RUN_PROCEDURE_CPU1",
     [0x2A] = "SBUS_RUN_PROCEDURE_CPU2",
@@ -67,10 +71,12 @@ export {
     [0x49] = "SBUS_RD_INDEX_REGISTER",
     [0x4A] = "SBUS_RD_INSTRUCTION_POINTER",
     [0x4B] = "SBUS_FIND_HISTORY",
+
     [0x50] = "SBUS_WR_STATUSFLAG_ACCU",
     [0x51] = "SBUS_WR_BYTE",
     [0x52] = "SBUS_WR_INDEX_REGISTER",
     [0x53] = "SBUS_WR_INSTRUCTION_POINTER",
+
     [0x5A] = "SBUS_CLEAR_ALL",
     [0x5B] = "SBUS_CLEAR_FLAGS",
     [0x5C] = "SBUS_CLEAR_OUTPUTS",
@@ -109,7 +115,9 @@ export {
     [0x9E] = "SBUS_RD_CALL_STACK",
     [0x9F] = "SBUS_RD_DBX",
     [0xA1] = "SBUS_RD_USER_EEPROM_REGISTER",
+
     [0xA3] = "SBUS_WR_USER_EEPROM_REGISTER",
+    
     [0xA5] = "SBUS_ERASE_FLASH",
     [0xA6] = "SBUS_RESTART_COLD_FLAG",
     [0xA7] = "SBUS_WR_SYSTEM_BUFFER",
