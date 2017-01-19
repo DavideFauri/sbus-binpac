@@ -4,8 +4,8 @@ include(BroPlugin)
 
 include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
 
-bro_plugin_begin(Bro SAMPLE)
-	bro_plugin_cc(SAMPLE.cc Plugin.cc)
+bro_plugin_begin(Bro SBUS)
+	bro_plugin_cc(Sbus.cc Plugin.cc)
 	bro_plugin_bif(events.bif)
-	bro_plugin_pac(sample.pac sample-analyzer.pac sample-protocol.pac)
+	bro_plugin_pac(sbus.pac sbus-analyzer.pac sbus-protocol.pac)
 bro_plugin_end()
