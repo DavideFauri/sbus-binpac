@@ -1,14 +1,17 @@
 # Developed by Davide Fauri (TU Eindhoven) - d.fauri@tue.nl
 
-# In this file, you'll define the events that your analyzer will
-# generate. A sample event is included.
+# events defined here are called in sbus-analyzer.pac
 
-# ## TODO: Edit the sample event, and add more events.
+## c:       the connection record for the underlying transport-layer session/flow
+## headers: the headers of the sbus packet
+## cmd:     the function code for each request
+## code:    the ack/nak response code
 
-## Generated for Sample connections
-##
-## See `Google <http://lmgtfy.com/?q=Sample>`__ for more information about Sample
-##
-## c: The connection
-##
-event sample_event%(c: connection%);
+## Generated for any Sbus request
+event sbus_request%(c: connection: headers: SbusHeaders, cmd: count%);
+
+## Generated for any Sbus response
+event sbus_response%(c: connection, headers: SbusHeaders%);
+
+## Generated for ACK/NAK responses
+event sbus_acknak%(c: connection, headers: SbusHeaders, code: count%);
