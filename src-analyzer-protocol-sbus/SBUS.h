@@ -4,30 +4,22 @@
 #define ANALYZER_PROTOCOL_SBUS_SBUS_H
 
 #include "analyzer/protocol/udp/UDP.h"
-
 #include "sbus_pac.h"
 
 namespace analyzer { namespace sbus {
 
-class Sbus_Analyzer
-
-// TODO: check if inheriting from USPAnalyzer is correct
-: public udp::UDP_Analyzer {
-
+class Sbus_Analyzer : public udp::Analyzer {
 public:
-
 	Sbus_Analyzer(Connection* conn);
 	virtual ~Sbus_Analyzer();
 
 	// Overriden from Analyzer.
 	virtual void Done();
-	
-	// TODO: check if this function is right
-	virtual void DeliverMessage(int len, const u_char* data, bool orig,
-															uint64 seq);
+	virtual void DeliverPacket(int len, const u_char* data, bool orig,
+													   uint64 seq, const IP_Hdr* ip, int caplen);
 
 
-	static analyzer::Analyzer* InstantiateAnalyzer(Connection* conn)
+	static analyzer::Analyzer* Instantiate(Connection* conn)
 		{ return new Sbus_Analyzer(conn); }
 
 protected:
