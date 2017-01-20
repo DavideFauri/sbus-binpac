@@ -6,8 +6,7 @@
 
 using namespace analyzer::sbus;
 
-Sbus_Analyzer::Sbus_Analyzer(Connection* c)
-	: tcp::TCP_ApplicationAnalyzer("SBUS", c)
+Sbus_Analyzer::Sbus_Analyzer(Connection* c)	: tcp::TCP_ApplicationAnalyzer("SBUS", c)
 	{
 	interp = new binpac::Sbus::Sbus_Conn(this);
 	}

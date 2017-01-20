@@ -12,10 +12,10 @@ public:
 	plugin::Configuration Configure()
 		{
 		AddComponent(new ::analyzer::Component("SBUS",
-		             ::analyzer::sbus::Sbus_Analyzer::InstantiateAnalyzer));
+		             ::analyzer::sbus::Sbus_Analyzer::Instantiate));
 
 		plugin::Configuration config;
-		config.name = "Bro::Sbus";
+		config.name = "Bro::sbus";
 		config.description = "Sbus analyzer";
 		return config;
 		}
