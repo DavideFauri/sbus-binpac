@@ -1,4 +1,4 @@
-# Written by Davide Fauri (TU Eindhoven) - d.fauri@tue.nl
+# Developed by Davide Fauri (TU Eindhoven) - d.fauri@tue.nl
 
 # copypasted from Modbus, since I found no documentation on how to set up a SBus connection
 refine connection SBus_Conn += {

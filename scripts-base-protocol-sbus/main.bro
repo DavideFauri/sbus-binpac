@@ -46,7 +46,6 @@ event sbus_message(c: connection, headers: SbusHeaders, is_orig: bool) &priority
 event sbus_message(c: connection, headers: SbusHeaders, is_orig: bool) &priority=-5
 	{
 	# Only log upon replies.
-	# Also, don't log now if this is an exception (log in the exception event handler)
 	if ( ! is_orig  )
 		Log::write(LOG, c$sbus);
 	}

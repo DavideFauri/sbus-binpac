@@ -2,7 +2,7 @@
 
 #include "plugin/Plugin.h"
 
-#include "SBus.h"
+#include "Sbus.h"
 
 namespace plugin {
 namespace Bro_Sbus {
