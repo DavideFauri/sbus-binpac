@@ -18,29 +18,13 @@ Sbus_Analyzer::~Sbus_Analyzer()
 	}
 
 void Sbus_Analyzer::Done()
-	{
-	
-	tcp::TCP_ApplicationAnalyzer::Done();
-
-	interp->FlowEOF(true);
-	interp->FlowEOF(false);
-	
+	{	
+	Analyzer::Done();
 	}
 
-void Sbus_Analyzer::EndpointEOF(bool is_orig)
+void Sbus_Analyzer::DeliverPacket(int len, const u_char* data, bool orig,
+													   uint64 seq, const IP_Hdr* ip, int caplen)
 	{
-	tcp::TCP_ApplicationAnalyzer::EndpointEOF(is_orig);
-	interp->FlowEOF(is_orig);
-	}
-
-void Sbus_Analyzer::DeliverStream(int len, const u_char* data, bool orig)
-	{
-	tcp::TCP_ApplicationAnalyzer::DeliverStream(len, data, orig);
+	Analyzer::DeliverPacket(len, data, orig, seq, ip, caplen);
 	interp->NewData(orig, data, data + len);
-	}
-
-void Sbus_Analyzer::Undelivered(uint64 seq, int len, bool orig)
-	{
-	tcp::TCP_ApplicationAnalyzer::Undelivered(seq, len, orig);
-	interp->NewGap(orig, len);
 	}
