@@ -10,20 +10,20 @@
 	#include "events.bif.h"
 %}
 
-analyzer SBus withcontext {
-	connection: SBus_conn;
-	flow:       SBus_flow;
+analyzer Sbus withcontext {
+	connection: Sbus_conn;
+	flow:       Sbus_flow;
 };
 
-connection SBus_conn(bro_analyzer: BroAnalyzer) {
-	upflow   = SBus_flow(true);
-	downflow = SBus_flow(false);
+connection Sbus_conn(bro_analyzer: BroAnalyzer) {
+	upflow   = Sbus_flow(true);
+	downflow = Sbus_flow(false);
 };
 
 %include sbus-protocol.pac
 
-flow SBus_flow(is_orig: bool) {
-	flowunit = SBus_PDU(is_orig) withcontext(connection, this);
+flow Sbus_flow(is_orig: bool) {
+	flowunit = Sbus_PDU(is_orig) withcontext(connection, this);
 };
 
 %include sbus-analyzer.pac

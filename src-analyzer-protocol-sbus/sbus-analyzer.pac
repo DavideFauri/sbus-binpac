@@ -37,13 +37,13 @@ refine connection SBus_Conn += {
     %}
 }
 
-refine flow SBus_Flow += {
+refine flow Sbus_Flow += {
 
-  function deliver_SBus_PDU(msg: SBus_PDU): bool
+  function deliver_Sbus_PDU(msg: Sbus_PDU): bool
     %{
-    // We will assume that if an entire PDU from both sides
-    // is successfully parsed then this is definitely modbus.
-    connection()->SetPDU(${message.is_orig});
+    //# We will assume that if an entire PDU from both sides
+    //# is successfully parsed then this is definitely modbus.
+    connection()->SetPDU(${msg.is_orig});
 
     if ( ! connection()->IsConfirmed() )
       {
@@ -54,7 +54,7 @@ refine flow SBus_Flow += {
     return true;
     %}
   
-  function deliver_message(header: SBus_Header): bool
+  function deliver_message(header: Sbus_Header): bool
   %{
   if ( ::sbus_message )
     {
@@ -68,6 +68,6 @@ refine flow SBus_Flow += {
   %}
 };
 
-#refine typeattr SBus_PDU += &let {
+#refine typeattr Sbus_PDU += &let {
 # proc: bool = $context.flow.proc_sbus_message(this);
 #};
